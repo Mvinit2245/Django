@@ -168,11 +168,16 @@
             <h2 class="product-name">{{ pro.name }}</h2>
             <p class="product-price">Price = ₹{{ pro.price }}</p>
             <p class="product-description">{{ pro.description }}</p>
+            <a href="{% url 'update_product' pro.id%}"> <button type="button">Update </button></a>
+            <a href="{% url 'delete_product' pro.id%}"> <button type="button">Delete </button></a>
+            
             <button class="button">Add to Cart</button>
         </div>
     </div>
     {% endfor %}
 </div>
+
+
 
 <div>
     <div class="form-container">
