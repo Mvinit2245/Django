@@ -22,7 +22,7 @@ def update_product(request,id):
     prod = get_object_or_404(Product,id=id)
     
     if request.method == 'POST':
-        form = ProductForm(request.POST, instance=prod)
+        form = ProductForm(request.POST,request.FILES, instance=prod)
         if form.is_valid():
             form.save()
             return redirect('product_detail')
